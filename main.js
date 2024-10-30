@@ -78,12 +78,16 @@ var ArxivModal = class extends import_obsidian.Modal {
     });
   }
   async importPaper(input) {
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d, _e, _f;
     try {
       new import_obsidian.Notice("Fetching paper...");
       let id = input;
       if (input.includes("arxiv.org")) {
-        id = ((_a = input.split("/").pop()) == null ? void 0 : _a.replace("abs/", "")) || "";
+        if (input.includes("/pdf/")) {
+          id = ((_a = input.split("/pdf/").pop()) == null ? void 0 : _a.replace(".pdf", "")) || "";
+        } else {
+          id = ((_b = input.split("/").pop()) == null ? void 0 : _b.replace("abs/", "")) || "";
+        }
       }
       if (!id) {
         new import_obsidian.Notice("Invalid ArXiv URL or ID");
@@ -100,8 +104,8 @@ var ArxivModal = class extends import_obsidian.Modal {
       if (!entry) {
         throw new Error("Paper not found");
       }
-      const title = ((_c = (_b = entry.querySelector("title")) == null ? void 0 : _b.textContent) == null ? void 0 : _c.trim()) || "Untitled";
-      const abstract = ((_e = (_d = entry.querySelector("summary")) == null ? void 0 : _d.textContent) == null ? void 0 : _e.trim()) || "";
+      const title = ((_d = (_c = entry.querySelector("title")) == null ? void 0 : _c.textContent) == null ? void 0 : _d.trim()) || "Untitled";
+      const abstract = ((_f = (_e = entry.querySelector("summary")) == null ? void 0 : _e.textContent) == null ? void 0 : _f.trim()) || "";
       const authors = Array.from(entry.querySelectorAll("author name")).map((author) => {
         var _a2;
         return (_a2 = author.textContent) == null ? void 0 : _a2.trim();

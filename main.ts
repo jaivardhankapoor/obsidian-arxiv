@@ -91,7 +91,11 @@ class ArxivModal extends Modal {
             // Extract ID from input
             let id = input;
             if (input.includes('arxiv.org')) {
-                id = input.split('/').pop()?.replace('abs/', '') || '';
+                if (input.includes('/pdf/')) {
+                    id = input.split('/pdf/').pop()?.replace('.pdf', '') || '';
+                } else {
+                    id = input.split('/').pop()?.replace('abs/', '') || '';
+                }
             }
             if (!id) {
                 new Notice('Invalid ArXiv URL or ID');

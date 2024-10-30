@@ -1,6 +1,6 @@
 {
     "id": "arxiv-template",
-    "name": "ArXiv Importer",
+    "name": "ArXiv Template",
     "version": "1.0.0",
     "minAppVersion": "1.0.0",
     "description": "Import papers from ArXiv as notes",
