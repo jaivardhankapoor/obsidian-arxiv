@@ -15,6 +15,8 @@ A simple Obsidian plugin to import arXiv papers as notes in your vault.
 - 🚀 Accessible via ribbon icon or command palette
 
 ## Installation
+Visit 
+[![Obsidian Community Plugin](https://img.shields.io/badge/Obsidian-Community%20Plugin-blue)](https://obsidian.md/plugins?id=arxiv-template) for the latest release. (In review)
 
 ### Manual Installation
 
