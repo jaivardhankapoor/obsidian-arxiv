@@ -1,0 +1,30 @@
+{
+    "name": "obsidian-arxiv",
+    "version": "1.0.0",
+    "description": "Import papers from ArXiv as notes in Obsidian",
+    "main": "main.js",
+    "scripts": {
+        "dev": "node esbuild.config.mjs",
+        "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+    },
+    "keywords": [
+        "obsidian",
+        "arxiv",
+        "paper",
+        "research"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "20.8.0",
+        "@typescript-eslint/eslint-plugin": "6.7.4",
+        "@typescript-eslint/parser": "6.7.4",
+        "esbuild": "0.19.4",
+        "obsidian": "latest",
+        "typescript": "5.2.2",
+        "tslib": "^2.8.0"
+    },
+    "dependencies": {
+        "tslib": "^2.8.0"
+    }
+}
